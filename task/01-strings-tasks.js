@@ -233,7 +233,7 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    return str.replace(/[A-Za-z]/g, (c) => String.fromCharCode( c.charCodeAt(0) + (c.toUpperCase() <= 'M' ? 13 : -13))); 
 }
 
 /**
@@ -279,7 +279,12 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+    return Array.of('A♣','2♣','3♣','4♣','5♣','6♣',
+    '7♣','8♣','9♣','10♣','J♣','Q♣','K♣','A♦','2♦',
+    '3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦',
+    'Q♦','K♦','A♥','2♥','3♥','4♥','5♥','6♥','7♥',
+    '8♥','9♥','10♥','J♥','Q♥','K♥','A♠','2♠','3♠',
+    '4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠').indexOf(value);
 }
 
 

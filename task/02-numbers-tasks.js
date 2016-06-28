@@ -22,7 +22,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-    throw new Error('Not implemented');
+    return width*height;
 }
 
 
@@ -38,7 +38,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCicleCircumference(radius) {
-    throw new Error('Not implemented');
+    return 2*(radius*Math.PI);
 }
 
 /**
@@ -54,7 +54,8 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    throw new Error('Not implemented');
+    var r = (value1 + value2) / 2;
+    return r > Number.MAX_VALUE ? Number.MAX_VALUE : r;
 }
 
 /**
@@ -73,7 +74,10 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    var x = x2-(x1);
+    var y = y2-(y1);
+    var d = Math.sqrt((x*(x))+(y*(y)));
+    return  d;
 }
 
 /**
@@ -89,7 +93,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    throw new Error('Not implemented');
+    return (b)/(a*-1);
 }
 
 
@@ -111,7 +115,31 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    var p1 = {
+        x: x1,
+        y: y1
+    };
+
+    var p2 = {
+        x: x2,
+        y: y2
+    };
+        
+    var cos = ((p1.x*p2.x) + (p1.y*p2.y))/(Math.sqrt((p1.x*p1.x)+(p1.y*p1.y)) * Math.sqrt((p2.x*p2.x)+(p2.y*p2.y)));
+    var angleRadians;
+
+    switch (cos) {
+        case 1:
+            angleRadians = 0;
+            break;
+        case 0:
+            angleRadians = Math.PI/2;
+            break;
+        case -1:
+            angleRadians = Math.PI;
+            break;
+    }
+    return angleRadians;
 }
 
 /**
@@ -127,7 +155,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+    return `${value}`[`${value}`.length-1];
 }
 
 
@@ -143,7 +171,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+    return Number(value);
 }
 
 /**
@@ -160,7 +188,8 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a,b,c) {
-    throw new Error('Not implemented');
+    a = a*a, b = b*b, c = c*c;
+    return Math.sqrt(a+b+c);
 }
 
 /**
