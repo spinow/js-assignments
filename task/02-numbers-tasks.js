@@ -22,7 +22,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-    return width*height;
+    return width * height;
 }
 
 
@@ -38,7 +38,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCicleCircumference(radius) {
-    return 2*(radius*Math.PI);
+    return 2 * (radius * Math.PI);
 }
 
 /**
@@ -74,10 +74,10 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    var x = x2-(x1);
-    var y = y2-(y1);
-    var d = Math.sqrt((x*(x))+(y*(y)));
-    return  d;
+    var x = x2 - (x1);
+    var y = y2 - (y1);
+    var d = Math.sqrt((x * (x)) + (y * (y)));
+    return d;
 }
 
 /**
@@ -93,7 +93,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    return (b)/(a*-1);
+    return (b) / (a * -1);
 }
 
 
@@ -124,8 +124,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
         x: x2,
         y: y2
     };
-        
-    var cos = ((p1.x*p2.x) + (p1.y*p2.y))/(Math.sqrt((p1.x*p1.x)+(p1.y*p1.y)) * Math.sqrt((p2.x*p2.x)+(p2.y*p2.y)));
+
+    var cos = ((p1.x * p2.x) + (p1.y * p2.y)) / (Math.sqrt((p1.x * p1.x) + (p1.y * p1.y)) * Math.sqrt((p2.x * p2.x) + (p2.y * p2.y)));
     var angleRadians;
 
     switch (cos) {
@@ -133,7 +133,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
             angleRadians = 0;
             break;
         case 0:
-            angleRadians = Math.PI/2;
+            angleRadians = Math.PI / 2;
             break;
         case -1:
             angleRadians = Math.PI;
@@ -155,7 +155,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    return `${value}`[`${value}`.length-1];
+    return `${value}`[`${value}`.length - 1];
 }
 
 
@@ -187,9 +187,9 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelipidedDiagonal(a,b,c) {
-    a = a*a, b = b*b, c = c*c;
-    return Math.sqrt(a+b+c);
+function getParallelipidedDiagonal(a, b, c) {
+    a = a * a, b = b * b, c = c * c;
+    return Math.sqrt(a + b + c);
 }
 
 /**
@@ -231,7 +231,12 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+    var d = n - 1;
+    while (d > 1) {
+        if ((n % d) == 0) return false;
+        d--;
+    }
+    return true;
 }
 
 /**
@@ -250,7 +255,7 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-    throw new Error('Not implemented');
+    return Number(value) || def;
 }
 
 module.exports = {
