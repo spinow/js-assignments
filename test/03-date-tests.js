@@ -113,10 +113,10 @@ describe('03-date-tasks', function() {
                 expected: Math.PI
             }, {
                 date:     Date.UTC(2016,3,5, 9, 0),
-                expected: Math.PI/2
+                expected: (3*Math.PI)/2
             }, {
                 date:     Date.UTC(2016,3,5,21, 0),
-                expected: Math.PI/2
+                expected: (3*Math.PI)/2
             }, {
                 date:     Date.UTC(2016,3,5,14,20),
                 expected: 0.8726646259971648

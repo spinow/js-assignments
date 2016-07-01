@@ -91,7 +91,7 @@ function timeSpanToString(startDate, endDate) {
     if (ms < 10) {ms = "00"+ms;}
     
     var t = hh+":"+mm+":"+ss+"."+ms;
-    
+
     return t;
 }
 
@@ -110,7 +110,12 @@ function timeSpanToString(startDate, endDate) {
  *    Date.UTC(2016,3,5,21, 0) => Math.PI/2
  */
 function angleBetweenClockHands(date) {
-    throw new Error('Not implemented');
+    var hours = date.getUTCHours() > 0 ? ((date.getUTCHours() + 11) % 12) + 1 : 0;
+    var minutes = date.getUTCMinutes();
+    var hourAngle = 0.5 * (hours * 60 + minutes);
+    var minuteAngle = 6 * minutes;
+    console.log(hourAngle - minuteAngle);
+    return ((Math.abs(hourAngle - minuteAngle)) * Math.PI) / 180;
 }
 
 
